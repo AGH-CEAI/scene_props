@@ -10,4 +10,5 @@ These models are made with OpenSCAD software. By default, all metrics are unitle
 
 
 ## Roadmap
+- [ ] Fix models rotations (and VCS preview).
 - [ ] Create scripts for automatic generation of all models.
