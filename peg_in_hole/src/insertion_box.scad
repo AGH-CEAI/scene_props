@@ -17,15 +17,21 @@ use <libpeginhole.scad>
 $fa = 1;
 $fs = 0.4;
 
-// Hole
-prism_diameter = 40;
-tolerance = 1.0;
-box_height = 50;
-slot_size = 1.5 * prism_diameter;
 
-rotate([ 90, 0, 0 ])
-multiple_insertion_box(slot_size = slot_size, array_size = [ 1, 4 ], depth = box_height / 2, height = box_height,
-                       leg_width = 2.0 * slot_size)
+// Hole
+rotation = [ 0, 0, 0 ]; // in degs
+array_x=1;
+array_y=2;
+box_height = 50;
+depth = box_height / 2;
+prism_diameter = 40;
+slot_size = 1.5 * prism_diameter;
+leg_width = 2 * slot_size;
+tolerance = 1.0;
+
+rotate(rotation)
+multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2, height = box_height,
+                       leg_width = 2 * slot_size)
 {
 	regular_prism(vertices = 3, diameter = prism_diameter + tolerance, height = 100);
 	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100);

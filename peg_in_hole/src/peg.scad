@@ -18,5 +18,11 @@ $fa = 1;
 $fs = 0.4;
 
 // Peg
-rotate([ 90, 0, 0 ])
-regular_prism(vertices = 5, diameter = 40, height = 100, is_cylinder = true);
+rotation = [ 0, 0, 0 ]; // in degs
+vertices = 3;
+diameter = 40;
+height = 100;
+is_cylinder = false;
+
+rotate(rotation)
+regular_prism(vertices = vertices, diameter = diameter, height = height, is_cylinder = is_cylinder);
