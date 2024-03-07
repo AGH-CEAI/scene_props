@@ -19,7 +19,7 @@ $fs = 0.4;
 
 // Peg
 rotation = [ 0, 0, 0 ]; // in degs
-vertices = 3;
+vertices = 6;
 diameter = 40;
 height = 100;
 is_cylinder = false;
