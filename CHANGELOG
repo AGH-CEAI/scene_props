@@ -8,9 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Creation of insertion boxes for only one pegs.
+- Phase rotation for uniform n-gon verticies.
 - Peg in hole (PiH) generation scripts (prisms as pegs with dedicated insertion boxes).
 - Created scripts for automatic generation of all PiH models.
 
 
 ### Changed
+- Holes: set tolerance options to 5mm or 10mm.
+- Pegs: due to problems with collisions in simulation, changed cylinder into 12-gonal prism,
 - Pegs: from 3,4,5-gonals prims to 4,6,8-gonals prims (easier to grasp with finger gripper).
