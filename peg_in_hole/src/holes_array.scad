@@ -17,7 +17,6 @@ use <libpeginhole.scad>
 $fa = 1;
 $fs = 0.4;
 
-
 // Holes array
 rotation = [ 0, 0, 0 ]; // in degs
 array_x = 1;
@@ -30,8 +29,8 @@ leg_width = 2 * slot_size;
 tolerance = 1.0;
 
 rotate(rotation)
-multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2, height = box_height,
-                       leg_width = 2 * slot_size)
+multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2,
+                       height = box_height, leg_width = 2 * slot_size)
 {
 	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
 	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100, angle_offset = 30);
