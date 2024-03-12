@@ -18,10 +18,10 @@ $fa = 1;
 $fs = 0.4;
 
 
-// Hole
+// Holes array
 rotation = [ 0, 0, 0 ]; // in degs
-array_x=1;
-array_y=4;
+array_x = 1;
+array_y = 4;
 box_height = 50;
 depth = box_height / 2;
 prism_diameter = 40;

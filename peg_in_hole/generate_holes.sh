@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_PATH=./src/insertion_box.scad
+SCRIPT_PATH=./src/holes_array.scad
 OUTPUT_DIR=./meshes
 
 ARRAY_X=1
