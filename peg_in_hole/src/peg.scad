@@ -19,10 +19,10 @@ $fs = 0.4;
 
 // Peg
 rotation = [ 0, 0, 0 ]; // in degs
-angle_offset = 30;
 vertices = 6;
 diameter = 40;
 height = 100;
+angle_offset = (360 / vertices) / 2;
 is_cylinder = false;
 
 rotate(rotation)

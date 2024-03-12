@@ -33,7 +33,7 @@ multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ],
                        height = box_height, leg_width = 2 * slot_size)
 {
 	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
-	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100, angle_offset = 30);
+	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
 	regular_prism(vertices = 8, diameter = prism_diameter + tolerance, height = 100, angle_offset = 22.5);
 	regular_prism(vertices = 12, diameter = prism_diameter + tolerance, height = 100, angle_offset = 15);
 };
