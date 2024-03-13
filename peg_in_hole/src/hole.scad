@@ -17,24 +17,20 @@ use <libpeginhole.scad>
 $fa = 1;
 $fs = 0.4;
 
-
-// Hole
+// Single hole
 rotation = [ 0, 0, 0 ]; // in degs
-array_x=1;
-array_y=4;
+vertices = 12;
 box_height = 50;
 depth = box_height / 2;
 prism_diameter = 40;
 slot_size = 1.5 * prism_diameter;
 leg_width = 2 * slot_size;
 tolerance = 1.0;
+angle_offset = (360 / vertices) / 2;
 
 rotate(rotation)
-multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2, height = box_height,
-                       leg_width = 2 * slot_size)
+single_insertion_box(slot_size = slot_size, depth = box_height / 2, height = box_height, leg_width = 2 * slot_size)
 {
-	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100);
-	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100);
-	regular_prism(vertices = 8, diameter = prism_diameter + tolerance, height = 100);
-	regular_prism(is_cylinder = true, diameter = prism_diameter + tolerance, height = 100);
+	regular_prism(vertices = vertices, diameter = prism_diameter + tolerance, height = 100,
+	              angle_offset = angle_offset);
 };

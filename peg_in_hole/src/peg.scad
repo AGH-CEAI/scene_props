@@ -22,7 +22,9 @@ rotation = [ 0, 0, 0 ]; // in degs
 vertices = 6;
 diameter = 40;
 height = 100;
+angle_offset = (360 / vertices) / 2;
 is_cylinder = false;
 
 rotate(rotation)
-regular_prism(vertices = vertices, diameter = diameter, height = height, is_cylinder = is_cylinder);
+regular_prism(vertices = vertices, diameter = diameter, height = height, angle_offset = angle_offset,
+              is_cylinder = is_cylinder);

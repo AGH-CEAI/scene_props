@@ -15,17 +15,18 @@
  */
 EPS = 0.001;
 
-function circle_coordinate(x, r) = [ r * cos(x), r *sin(x) ];
-function regular_shape_vertices(n = 3, r = 1) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r)];
+function circle_coordinate(x, r, p) = [ r * cos(x + p), r * sin(x + p) ];
+function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r, phase)];
 
 /* Makes a single peg in form of regular prism
 -  Args:
 - @vertices: int - number of the base polygon vertices
 - @diameter: num - the diameter of the circle to construct the verticies
 - @height: num - the height of the prism
+- @angle_offset: num - rotation of all verticies
 - @is_cylinder: bool - flag to convert prism into cylinder
 */
-module regular_prism(vertices, diameter, height, is_cylinder = false)
+module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = false)
 {
 	if (is_cylinder)
 	{
@@ -45,7 +46,7 @@ module regular_prism(vertices, diameter, height, is_cylinder = false)
 			}
 			else
 			{
-				points = regular_shape_vertices(n = vertices, r = diameter / 2);
+				points = regular_shape_vertices(n = vertices, r = diameter / 2, phase = angle_offset);
 				polygon(points);
 			}
 		}
