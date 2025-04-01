@@ -28,9 +28,11 @@ leg_width = 2 * slot_size;
 tolerance = 1.0;
 angle_offset = (360 / vertices) / 2;
 
+_hole_diameter = 2 * tolerance + prism_diameter;
+
 rotate(rotation)
 single_insertion_box(slot_size = slot_size, depth = box_height / 2, height = box_height, leg_width = 2 * slot_size)
 {
-	regular_prism(vertices = vertices, diameter = prism_diameter + tolerance, height = 100,
+	regular_prism(vertices = vertices, diameter = _hole_diameter, height = 100,
 	              angle_offset = angle_offset);
 };

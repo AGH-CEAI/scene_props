@@ -28,12 +28,14 @@ slot_size = 1.5 * prism_diameter;
 leg_width = 2 * slot_size;
 tolerance = 1.0;
 
+_hole_diameter = 2 * tolerance + prism_diameter;
+
 rotate(rotation)
 multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2,
                        height = box_height, leg_width = 2 * slot_size)
 {
-	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
-	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
-	regular_prism(vertices = 8, diameter = prism_diameter + tolerance, height = 100, angle_offset = 22.5);
-	regular_prism(vertices = 12, diameter = prism_diameter + tolerance, height = 100, angle_offset = 15);
+	regular_prism(vertices = 4, diameter = _hole_diameter, height = 100, angle_offset = 0);
+	regular_prism(vertices = 6, diameter = _hole_diameter, height = 100, angle_offset = 0);
+	regular_prism(vertices = 8, diameter = _hole_diameter, height = 100, angle_offset = 22.5);
+	regular_prism(vertices = 12, diameter = _hole_diameter, height = 100, angle_offset = 15);
 };
