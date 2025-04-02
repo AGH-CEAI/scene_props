@@ -3,7 +3,7 @@
 SCRIPT_PATH=./src/holes_array.scad
 OUTPUT_DIR=./meshes/holes
 
-TOLERANCES=(5 10)
+TOLERANCES=(2 5 10)
 ARRAY_X=1
 ARRAY_Y=4
 BOX_HEIGHT=50
