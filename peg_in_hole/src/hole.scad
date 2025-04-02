@@ -19,20 +19,19 @@ $fs = 0.4;
 
 // Single hole
 rotation = [ 0, 0, 0 ]; // in degs
+
 vertices = 12;
 box_height = 50;
-depth = box_height / 2;
 prism_diameter = 40;
+tolerance = 1.0;
+
+depth = box_height / 2;
 slot_size = 1.5 * prism_diameter;
 leg_width = 2 * slot_size;
-tolerance = 1.0;
-angle_offset = (360 / vertices) / 2;
-
-_hole_diameter = 2 * tolerance + prism_diameter;
 
 rotate(rotation)
 single_insertion_box(slot_size = slot_size, depth = box_height / 2, height = box_height, leg_width = 2 * slot_size)
 {
-	regular_prism(vertices = vertices, diameter = _hole_diameter, height = 100,
-	              angle_offset = angle_offset);
+	regular_prism(vertices = vertices, diameter = hole_diameter(vertices, prism_diameter, tolerance), height = 100,
+	              angle_offset = angle_offset(vertices));
 };

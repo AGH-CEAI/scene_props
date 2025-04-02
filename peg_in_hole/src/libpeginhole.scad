@@ -18,6 +18,10 @@ EPS = 0.001;
 function circle_coordinate(x, r, p) = [ r * cos(x + p), r * sin(x + p) ];
 function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r, phase)];
 
+function hole_diameter(vertices, peg_diameter, tolerance = 0) = tolerance + peg_diameter * cos(180 / vertices);
+function angle_offset(vertices) = (360 / vertices) / 2;
+
+
 /* Makes a single peg in form of regular prism
 -  Args:
 - @vertices: int - number of the base polygon vertices
