@@ -1,4 +1,7 @@
-# Scene props
+# scene_props
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
 This repository contains models in `OpenSCAD` and `STL` formats for manipulation problems.
 
@@ -34,4 +37,13 @@ cd ./peg_in_hole
 ## Requirements
 ```bash
 sudo apt insatall openscad
+```
+
+---
+## Development notes
+
+This project uses various tools for aiding the quality of the source code. Currently most of them are executed by the `pre-commit`. Please make sure to enable its hooks:
+
+```bash
+pre-commit install
 ```
