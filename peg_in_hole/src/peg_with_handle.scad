@@ -18,25 +18,24 @@ $fa = 1;
 $fs = 0.4;
 
 // Handle
-handle_rotation = [ 0, 0, 0 ]; // in degs
+handle_rotation = [ 0, 0, 0 ];  // in degs
 handle_diameter = 15;
 handle_height = 25;
 
 // Peg
-rotation = [ 0, 0, 0 ]; // in degs
+rotation = [ 0, 0, 0 ];  // in degs
 vertices = 6;
 diameter = 40;
 height = 100;
-angle_offset = (360 / vertices) / 2;
 is_cylinder = false;
 
-union() {  
-    // Handle
-    rotate(handle_rotation)
-    translate([0, 0, height / 2 + handle_height / 2])
-    cube([handle_diameter, handle_diameter, handle_height], center = true);
-    // Peg
-    rotate(rotation)
-    regular_prism(vertices = vertices, diameter = diameter, height = height, angle_offset = angle_offset,
-                  is_cylinder = is_cylinder);
+union() {
+	// Handle
+	rotate(handle_rotation)
+	translate([ 0, 0, height / 2 + handle_height / 2 ])
+	    cube([ handle_diameter, handle_diameter, handle_height ], center = true);
+	// Peg
+	rotate(rotation)
+	regular_prism(vertices = vertices, diameter = diameter, height = height, angle_offset = angle_offset(vertices),
+	              is_cylinder = is_cylinder);
 };
