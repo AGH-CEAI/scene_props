@@ -8,11 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **2025-04-03** [[PR-4]](https://github.com/AGH-CEAI/scene_props/pull/4) - Added `pre-commit` to the codebase.
 - Creation of insertion boxes for only one pegs.
-- Phase rotation for uniform n-gon verticies.
+- Phase rotation for uniform n-gon vertices.
 - Peg in hole (PiH) generation scripts (prisms as pegs with dedicated insertion boxes).
 - Created scripts for automatic generation of all PiH models.
 
+### Fixed
+- **2025-04-03** [[PR-5]](https://github.com/AGH-CEAI/scene_props/pull/5) - Fixed peg-in-hole assembly hole tolerances. Now, the tolerance distance is calculated from the peg's wall to the hole's wall instead of from the peg's vertex to the hole's vertex.
 
 ### Changed
 - Holes: set tolerance options to 5mm or 10mm.
