@@ -1,5 +1,5 @@
 /*
- *  Copyright 2024 AGH Center of Excellence in Artificial Intelligence
+ *  Copyright 2024-2025 AGH Center of Excellence in Artificial Intelligence
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ rotation = [ 0, 0, 0 ]; // in degs
 
 vertices = [ 4, 6, 8, 12 ];
 height = 100;
+
 array_x = 1;
 array_y = 4;
 box_height = 50;

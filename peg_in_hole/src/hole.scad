@@ -1,5 +1,5 @@
 /*
- *  Copyright 2024 AGH Center of Excellence in Artificial Intelligence
+ *  Copyright 2024-2025 AGH Center of Excellence in Artificial Intelligence
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ $fa = 1;
 $fs = 0.4;
 
 // Single hole
-rotation = [ 0, 0, 0 ]; // in degs
+rotation = [ 0, 0, 0 ];  // in degs
 
 vertices = 12;
 box_height = 50;
