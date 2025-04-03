@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Creation of insertion boxes for only one pegs.
-- Phase rotation for uniform n-gon verticies.
+- Phase rotation for uniform n-gon vertices.
 - Peg in hole (PiH) generation scripts (prisms as pegs with dedicated insertion boxes).
 - Created scripts for automatic generation of all PiH models.
 

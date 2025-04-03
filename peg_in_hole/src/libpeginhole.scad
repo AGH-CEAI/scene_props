@@ -21,9 +21,9 @@ function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:
 /* Makes a single peg in form of regular prism
 -  Args:
 - @vertices: int - number of the base polygon vertices
-- @diameter: num - the diameter of the circle to construct the verticies
+- @diameter: num - the diameter of the circle to construct the vertices
 - @height: num - the height of the prism
-- @angle_offset: num - rotation of all verticies
+- @angle_offset: num - rotation of all vertices
 - @is_cylinder: bool - flag to convert prism into cylinder
 */
 module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = false)

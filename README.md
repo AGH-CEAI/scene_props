@@ -8,9 +8,9 @@ This repository contains models in `OpenSCAD` and `STL` formats for manipulation
 ### Insertion box
 <img src="./docs/insertion_box_preview.png" alt="Insertion box (with holes) model preview" style="width:250px;"/>
 
-- It is hard to accurately cut the model into pieces with [O3DE's Convex Decompostion](https://www.docs.o3de.org/docs/learning-guide/tutorials/assets/physx-colliders/#convex-decomposition) for PhsyX engine (it is realized by [V-HACD library](https://github.com/kmammou/v-hacd)).
+- It is hard to accurately cut the model into pieces with [O3DE's Convex Decomposition](https://www.docs.o3de.org/docs/learning-guide/tutorials/assets/physx-colliders/#convex-decomposition) for PhsyX engine (it is realized by [V-HACD library](https://github.com/kmammou/v-hacd)).
 
-### Single insertion box 
+### Single insertion box
 <img src="./docs/single_insertion_box_preview.png" alt="Single insertion box (one hole) model preview" style="width:250px;"/>
 
 ### Peg - uniform prism
@@ -18,7 +18,7 @@ This repository contains models in `OpenSCAD` and `STL` formats for manipulation
 
 
 ### Info
-- These models are made with OpenSCAD software. 
+- These models are made with OpenSCAD software.
 - By default, all metrics are unitless. Assume that **1 unit equals 1 mm**.
 - Tolerances selected for holes are `5` and `10` mm.
 - Source `*.scad` files are in `src` directory.
