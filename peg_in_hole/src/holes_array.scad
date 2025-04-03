@@ -18,7 +18,7 @@ $fa = 1;
 $fs = 0.4;
 
 // Holes array
-rotation = [ 0, 0, 0 ]; // in degs
+rotation = [ 0, 0, 0 ];  // in degs
 array_x = 1;
 array_y = 4;
 box_height = 50;
@@ -30,8 +30,7 @@ tolerance = 1.0;
 
 rotate(rotation)
 multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2,
-                       height = box_height, leg_width = 2 * slot_size)
-{
+                       height = box_height, leg_width = 2 * slot_size) {
 	regular_prism(vertices = 4, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
 	regular_prism(vertices = 6, diameter = prism_diameter + tolerance, height = 100, angle_offset = 0);
 	regular_prism(vertices = 8, diameter = prism_diameter + tolerance, height = 100, angle_offset = 22.5);

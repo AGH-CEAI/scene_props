@@ -18,7 +18,7 @@ $fa = 1;
 $fs = 0.4;
 
 // Single hole
-rotation = [ 0, 0, 0 ]; // in degs
+rotation = [ 0, 0, 0 ];  // in degs
 vertices = 12;
 box_height = 50;
 depth = box_height / 2;
@@ -29,8 +29,7 @@ tolerance = 1.0;
 angle_offset = (360 / vertices) / 2;
 
 rotate(rotation)
-single_insertion_box(slot_size = slot_size, depth = box_height / 2, height = box_height, leg_width = 2 * slot_size)
-{
+single_insertion_box(slot_size = slot_size, depth = box_height / 2, height = box_height, leg_width = 2 * slot_size) {
 	regular_prism(vertices = vertices, diameter = prism_diameter + tolerance, height = 100,
 	              angle_offset = angle_offset);
 };
