@@ -1,5 +1,5 @@
 /*
- *  Copyright 2024-2025 AGH Center of Excellence in Artificial Intelligence
+ *  Copyright 2025 AGH Center of Excellence in Artificial Intelligence
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -14,18 +14,20 @@
  *  limitations under the License.
  */
 use<libpeginhole.scad>;
-$fs = 0.4;
+use<libthtcomponent.scad>;
+$fs = 0.01;
 
-// Peg
-rotation = [ 0, 0, 0 ];  // in degs
-vertices = 6;
-diameter = 40;
-height = 100;
-is_cylinder = false;
+box_side = 10;
+box_height = 10;
+with_peg = true;
 
-rotate(rotation) regular_prism(
-    vertices = vertices,
-    diameter = diameter,
-    height = height,
-    angle_offset = angle_offset(vertices),
-    is_cylinder = is_cylinder);
+pin_vertices = 5;
+pin_diameter = box_side / 2;
+pin_height = box_height * 2;
+pin_is_cylinder = false;
+
+
+tht_pin_block(block_side = box_side, block_height = box_height, peg=with_peg)
+{
+    regular_prism(vertices = pin_vertices, diameter = pin_diameter, height = pin_height, angle_offset = angle_offset(pin_vertices), is_cylinder = pin_is_cylinder);
+};
