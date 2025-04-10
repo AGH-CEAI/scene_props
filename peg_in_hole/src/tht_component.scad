@@ -22,6 +22,12 @@ EPS = 0.001;
 block_side = 10;
 block_height = 10;
 
+// Parameters for the THT's pins
+pin_vertices = 5;
+pin_diameter = block_side / 2;
+pin_height = block_height * 2;
+pin_is_cylinder = true;
+
 cols = 4; // Number of columns (x)
 rows = 3; // Number of rows (y)
 default_pin = true;
@@ -33,12 +39,6 @@ inverted_pins = [
     [0, 2],
     [2, 2],
 ];
-
-// Parameters for the THT's pins
-pin_vertices = 5;
-pin_diameter = block_side / 2;
-pin_height = block_height * 2;
-pin_is_cylinder = true;
 
 tht_component(block_side = block_side,
               block_height = block_height,
