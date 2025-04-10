@@ -29,34 +29,33 @@ pin_is_cylinder = true;
 
 
 // Parameters for the array
-rows = 4; // Number of rows
-cols = 4; // Number of columns
+cols = 4; // Number of columns (x)
+rows = 4; // Number of rows (y)
 spacing = box_side + EPS; // Spacing between blocks
-
-// Define a 2D list of booleans to control the peg usage
-peg_array = [
-    [true, false, true],  // Row 1
-    // [false, true, false], // Row 2
-    // [true, false, true]   // Row 3
-];
 default_peg_value = true;
 
-// Function to safely access peg_array with a fallback
-function safe_lookup(array, x, y, default_value) =
-    (y < len(array) && x < len(array[y])) ? array[y][x] : default_value;
+// Pairs of x (col) and y (row)
+inverted_positions = [
+    [0, 0],
+    [3, 0],
+    [0, 3],
+    [3, 3],
+];
 
+// Function to check if a position is in the list
+function is_2d_in_list(pos, inv_list) =
+    max([for (p = inv_list) p[0] == pos[0] && p[1] == pos[1]]);
 
 // Calculate total dimensions of the array
 total_width = (cols - 1) * (spacing - EPS);
 total_height = (rows - 1) * (spacing - EPS);
-
 
 // Generate an array of tht_pin_block
 // Center the array at (0, 0, 0)
 translate([-total_width / 2, -total_height / 2, 0])
 for (x = [0:cols-1]) {
     for (y = [0:rows-1]) {
-        peg_value = safe_lookup(peg_array, x, y, default_peg_value);
+        peg_value = is_2d_in_list([x, y], inverted_positions) ? !default_peg_value : default_peg_value;
         translate([x * spacing, y * spacing, 0])
         tht_pin_block(block_side = box_side, block_height = box_height, peg=peg_value)
         {
