@@ -18,48 +18,37 @@ use<libthtcomponent.scad>;
 $fs = 0.01;
 EPS = 0.001;
 
-box_side = 10;
-box_height = 10;
-with_peg = true;
+// Parameters for the THT component
+block_side = 10;
+block_height = 10;
 
-pin_vertices = 5;
-pin_diameter = box_side / 2;
-pin_height = box_height * 2;
-pin_is_cylinder = true;
-
-
-// Parameters for the array
 cols = 4; // Number of columns (x)
-rows = 4; // Number of rows (y)
-spacing = box_side + EPS; // Spacing between blocks
-default_peg_value = true;
+rows = 3; // Number of rows (y)
+default_pin = true;
 
 // Pairs of x (col) and y (row)
-inverted_positions = [
+inverted_pins = [
     [0, 0],
-    [3, 0],
-    [0, 3],
-    [3, 3],
+    [2, 0],
+    [0, 2],
+    [2, 2],
 ];
 
-// Function to check if a position is in the list
-function is_2d_in_list(pos, inv_list) =
-    max([for (p = inv_list) p[0] == pos[0] && p[1] == pos[1]]);
+// Parameters for the THT's pins
+pin_vertices = 5;
+pin_diameter = block_side / 2;
+pin_height = block_height * 2;
+pin_is_cylinder = true;
 
-// Calculate total dimensions of the array
-total_width = (cols - 1) * (spacing - EPS);
-total_height = (rows - 1) * (spacing - EPS);
-
-// Generate an array of tht_pin_block
-// Center the array at (0, 0, 0)
-translate([-total_width / 2, -total_height / 2, 0])
-for (x = [0:cols-1]) {
-    for (y = [0:rows-1]) {
-        peg_value = is_2d_in_list([x, y], inverted_positions) ? !default_peg_value : default_peg_value;
-        translate([x * spacing, y * spacing, 0])
-        tht_pin_block(block_side = box_side, block_height = box_height, peg=peg_value)
-        {
-            regular_prism(vertices = pin_vertices, diameter = pin_diameter, height = pin_height, angle_offset = angle_offset(pin_vertices), is_cylinder = pin_is_cylinder);
-        };
-    }
-}
+tht_component(block_side = block_side,
+              block_height = block_height,
+              cols = cols,
+              rows = rows,
+              inverted_positions = inverted_pins,
+              default_pin = default_pin) {
+    regular_prism(vertices = pin_vertices,
+                  diameter = pin_diameter,
+                  height = pin_height,
+                  angle_offset = angle_offset(pin_vertices),
+                  is_cylinder = pin_is_cylinder);
+};
