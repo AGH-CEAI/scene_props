@@ -51,19 +51,12 @@ module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = fal
 /* Makes a single peghole
 -  Args:
 - @slot_size: num - the side of the box
-- @depth: num - the thickness of the surface for insertion
 - @height: num - the height of the whole box
-- @leg_width: num - the side of the supporting legs
 */
-module single_insertion_box(slot_size, depth, height, leg_width) {
+module single_insertion_box(slot_size, height) {
 	difference() {
 		// Insertion surface
 		cube([ slot_size, slot_size, height ], center = true);
-
-		// Clearance (4 legs)
-		translate([ 0, 0, -depth ]) cube([ slot_size + EPS, slot_size - 2 * leg_width, height ], center = true);
-		translate([ 0, 0, -depth ]) cube([ slot_size - 2 * leg_width, slot_size + EPS, height ], center = true);
-
 		// Peghole
 		children(0);
 	}
