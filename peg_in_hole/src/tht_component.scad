@@ -13,8 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-use<libpeginhole.scad>;
-use<libthtcomponent.scad>;
+use<libpeginhole.scad>
+use<libthtcomponent.scad>
+$fa = 1;
 $fs = 0.01;
 EPS = 0.001;
 
