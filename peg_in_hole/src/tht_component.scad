@@ -47,6 +47,7 @@ tht_component(block_side = block_side,
               rows = rows,
               inverted_positions = inverted_pins,
               default_pin = default_pin) {
+    translate([0, 0, -pin_height / 2])
     regular_prism(vertices = pin_vertices,
                   diameter = pin_diameter,
                   height = pin_height,

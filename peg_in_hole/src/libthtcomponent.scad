@@ -31,7 +31,7 @@ module tht_pin_block(block_side, block_height, pin = true)
     cube([block_side, block_side, block_height], center = true);
     // Peg
     if (pin) {
-        translate([0, 0, -block_height / 2])
+        translate([0, 0, -block_height / 2 - EPS])
         children(0);
     }
 };
