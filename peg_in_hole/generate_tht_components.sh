@@ -42,7 +42,7 @@ NAME_SUFFIX=""
 
 echo ">>> DUMMY THT-COMPONENT ${COLS}x${ROWS}"
 openscad \
-        -D block_side=$BLOCNAME_SUFFIX=""K_SIDE \
+        -D block_side=$BLOCK_SIDE \
         -D block_height=$BLOCK_HEIGHT \
         -D pin_diameter=$PIN_DIAMETER \
         -D pin_height=$PIN_HEIGHT \
