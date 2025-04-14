@@ -5,10 +5,10 @@ OUTPUT_DIR=./meshes/tht_components
 mkdir -p $OUTPUT_DIR
 
 # Single block with pin
-BLOCK_SIDE=10
-BLOCK_HEIGHT=10
-PIN_DIAMETER=$((BLOCK_SIDE / 2))
-PIN_HEIGHT=$((BLOCK_HEIGHT * 2))
+BLOCK_SIDE=12
+BLOCK_HEIGHT=15
+PIN_DIAMETER=6
+PIN_HEIGHT=12
 DEFAULT_PIN=true
 
 # ------------------------------------------- #

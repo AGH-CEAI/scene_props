@@ -20,25 +20,23 @@ $fs = 0.01;
 EPS = 0.001;
 
 // Parameters for the THT component
-block_side = 10;
-block_height = 10;
+block_side = 12;
+block_height = 15;
 
 // Parameters for the THT's pins
 pin_vertices = 5;
-pin_diameter = block_side / 2;
-pin_height = block_height * 2;
+pin_diameter = 6;
+pin_height = 12;
 pin_is_cylinder = true;
 
-cols = 4; // Number of columns (x)
+cols = 2; // Number of columns (x)
 rows = 3; // Number of rows (y)
 default_pin = true;
 
 // Pairs of x (col) and y (row)
 inverted_pins = [
     [0, 0],
-    [2, 0],
-    [0, 2],
-    [2, 2],
+    [1, 1],
 ];
 
 tht_component(block_side = block_side,
