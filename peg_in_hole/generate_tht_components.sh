@@ -11,65 +11,36 @@ PIN_DIAMETER=6
 PIN_HEIGHT=12
 DEFAULT_PIN=true
 
-# ------------------------------------------- #
-# ------------ THT 2x2, all pins ------------ #
-# ------------------------------------------- #
-COLS=2
-ROWS=2
-INVERTED_PINS="[]"
-NAME_SUFFIX=""
+# Function to generate THT components
+generate_tht_component() {
+    local COLS=$1
+    local ROWS=$2
+    local INVERTED_PINS=$3
+    local NAME_SUFFIX=$4
 
-echo ">>> DUMMY THT-COMPONENT ${COLS}x${ROWS}"
-openscad \
-        -D block_side=$BLOCK_SIDE \
-        -D block_height=$BLOCK_HEIGHT \
-        -D pin_diameter=$PIN_DIAMETER \
-        -D pin_height=$PIN_HEIGHT \
-        -D cols=$COLS \
-        -D rows=$ROWS \
-        -D default_pin=$DEFAULT_PIN \
-        -D inverted_pins="$INVERTED_PINS" \
-        $SCRIPT_PATH \
-        -o ${OUTPUT_DIR}/tht_${COLS}x${ROWS}${NAME_SUFFIX}.stl
-
-# ------------------------------------------- #
-# ------------ THT 2x3, all pins ------------ #
-# ------------------------------------------- #
-COLS=2
-ROWS=3
-INVERTED_PINS="[]"
-NAME_SUFFIX=""
-
-echo ">>> DUMMY THT-COMPONENT ${COLS}x${ROWS}"
-openscad \
-        -D block_side=$BLOCK_SIDE \
-        -D block_height=$BLOCK_HEIGHT \
-        -D pin_diameter=$PIN_DIAMETER \
-        -D pin_height=$PIN_HEIGHT \
-        -D cols=$COLS \
-        -D rows=$ROWS \
-        -D default_pin=$DEFAULT_PIN \
-        -D inverted_pins="$INVERTED_PINS" \
-        $SCRIPT_PATH \
-        -o ${OUTPUT_DIR}/tht_${COLS}x${ROWS}${NAME_SUFFIX}.stl
+    echo ">>> GENERATING THT-COMPONENT ${COLS}x${ROWS}${NAME_SUFFIX}"
+    openscad \
+            -D block_side=$BLOCK_SIDE \
+            -D block_height=$BLOCK_HEIGHT \
+            -D pin_diameter=$PIN_DIAMETER \
+            -D pin_height=$PIN_HEIGHT \
+            -D cols=$COLS \
+            -D rows=$ROWS \
+            -D default_pin=$DEFAULT_PIN \
+            -D inverted_pins="$INVERTED_PINS" \
+            $SCRIPT_PATH \
+            -o ${OUTPUT_DIR}/tht_${COLS}x${ROWS}${NAME_SUFFIX}.stl
+}
 
 # ------------------------------------------- #
-# ---------- THT 2x3, missing pins ---------- #
+# ------------ Generate Components ----------- #
 # ------------------------------------------- #
-COLS=2
-ROWS=3
-INVERTED_PINS="[[0,0],[1,1]]"
-NAME_SUFFIX="_missing_pins"
 
-echo ">>> DUMMY THT-COMPONENT ${COLS}x${ROWS}"
-openscad \
-        -D block_side=$BLOCK_SIDE \
-        -D block_height=$BLOCK_HEIGHT \
-        -D pin_diameter=$PIN_DIAMETER \
-        -D pin_height=$PIN_HEIGHT \
-        -D cols=$COLS \
-        -D rows=$ROWS \
-        -D default_pin=$DEFAULT_PIN \
-        -D inverted_pins="$INVERTED_PINS" \
-        $SCRIPT_PATH \
-        -o ${OUTPUT_DIR}/tht_${COLS}x${ROWS}${NAME_SUFFIX}.stl
+# THT 2x2, all pins
+generate_tht_component 2 2 "[]" ""
+
+# THT 2x3, all pins
+generate_tht_component 2 3 "[]" ""
+
+# THT 2x3, missing pins
+generate_tht_component 2 3 "[[0,0],[1,1]]" "_asymetric"
