@@ -36,7 +36,7 @@ cd ./peg_in_hole
 
 ## Requirements
 ```bash
-sudo apt insatall openscad
+sudo apt install openscad
 ```
 
 ---
