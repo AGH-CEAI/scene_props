@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-use<libpeginhole.scad> $fa = 1;
+use<libpeginhole.scad>;
 $fs = 0.4;
 
 // Peg

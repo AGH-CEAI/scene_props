@@ -8,16 +8,20 @@ This repository contains models in `OpenSCAD` and `STL` formats for manipulation
 ## Peg in hole
 
 
-### Insertion box
+### Uniform prism and insertion boxes
+<img src="./docs/hexagon_peg.png" alt="Uniform hexagonal prism (peg)" style="width:250px;"/>
+<img src="./docs/single_insertion_box_preview.png" alt="Single insertion box (one hole) model preview" style="width:250px;"/>
 <img src="./docs/insertion_box_preview.png" alt="Insertion box (with holes) model preview" style="width:250px;"/>
 
 - Accurately performing [convex decomposition](https://www.docs.o3de.org/docs/learning-guide/tutorials/assets/physx-colliders/#convex-decomposition) on this model in O3DE for the PhysX engine is challenging, as it relies on the [V-HACD library](https://github.com/kmammou/v-hacd).
 
-### Single insertion box
-<img src="./docs/single_insertion_box_preview.png" alt="Single insertion box (one hole) model preview" style="width:250px;"/>
+### THT component
+<img src="./docs/tht_pin_block.png" alt="A single block with pin module to build a THT component" style="width:250px;">
+<img src="./docs/tht_component.png" alt="A dummy THT component sized 3x3 with configurable pins" style="width:250px;">
 
-### Peg - uniform prism
-<img src="./docs/hexagon_peg.png" alt="Uniform hexagonal prism (peg)" style="width:250px;"/>
+Recreation of a dummy THT component based on the 3D-printed blocks presented in Figure 3 of Bartyzel’s work [1].
+
+[1] G. Bartyzel, ‘Multimodal Variational DeepMDP: An Efficient Approach for Industrial Assembly in High-Mix, Low-Volume Production’, IEEE Robotics and Automation Letters, pp. 1–8, 2024, doi: [10.1109/LRA.2024.3487490](https://doi.org/10.1109/LRA.2024.3487490).
 
 
 ### Info
