@@ -18,6 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **2025-04-03** [[PR-5]](https://github.com/AGH-CEAI/scene_props/pull/5) - Fixed peg-in-hole assembly hole tolerances. Now, the tolerance distance is calculated from the peg's wall to the hole's wall instead of from the peg's vertex to the hole's vertex.
 
 ### Changed
-- Holes: set tolerance options to 5mm or 10mm.
+- Holes: set tolerance options to 5 mm or 10 mm.
 - Pegs: due to problems with collisions in simulation, changed cylinder into 12-gonal prism,
 - Pegs: from 3,4,5-gonals prims to 4,6,8-gonals prims (easier to grasp with finger gripper).
