@@ -13,7 +13,7 @@ This repository contains models in `OpenSCAD` and `STL` formats for manipulation
 <img src="./docs/single_insertion_box_preview.png" alt="Single insertion box (one hole) model preview" style="width:250px;"/>
 <img src="./docs/insertion_box_preview.png" alt="Insertion box (with holes) model preview" style="width:250px;"/>
 
-- It is hard to accurately cut the model into pieces with [O3DE's Convex Decomposition](https://www.docs.o3de.org/docs/learning-guide/tutorials/assets/physx-colliders/#convex-decomposition) for PhsyX engine (it is realized by [V-HACD library](https://github.com/kmammou/v-hacd)).
+- Accurately performing [convex decomposition](https://www.docs.o3de.org/docs/learning-guide/tutorials/assets/physx-colliders/#convex-decomposition) on this model in O3DE for the PhysX engine is challenging, as it relies on the [V-HACD library](https://github.com/kmammou/v-hacd).
 
 ### THT component
 <img src="./docs/tht_pin_block.png" alt="A single block with pin module to build a THT component" style="width:250px;">
@@ -28,7 +28,7 @@ Recreation of a dummy THT component based on the 3D-printed blocks presented in 
 - These models are made with OpenSCAD software.
 - By default, all metrics are unitless. Assume that **1 unit equals 1 mm**.
 - Tolerances selected for holes are `5` and `10` mm.
-- Source `*.scad` files are in `src` directory.
+- Source `*.scad` files are located in the `src` directory.
 - Re-create models in `meshes` dir with bash scripts, i.e.:
 
 ```bash
@@ -47,7 +47,7 @@ sudo apt install openscad
 ---
 ## Development notes
 
-This project uses various tools for aiding the quality of the source code. Currently most of them are executed by the `pre-commit`. Please make sure to enable its hooks:
+This project uses various tools for aiding the quality of the source code. Currently most of them are executed by `pre-commit`. Please make sure to enable its hooks:
 
 ```bash
 pre-commit install
