@@ -30,6 +30,7 @@ This repository contains models in `OpenSCAD` and `STL` formats for manipulation
 ```bash
 cd ./peg_in_hole
 ./generate_pegs.sh
+./generate_pegs_with_handle.sh
 ./generate_holes.sh
 ./generate_holes_array.sh
 ```
