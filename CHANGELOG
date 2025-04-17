@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - **2025-04-03** [[PR-4]](https://github.com/AGH-CEAI/scene_props/pull/4) - Added `pre-commit` to the codebase.
-- Creation of insertion boxes for only one pegs.
+- Creation of insertion boxes for only one peg.
 - Phase rotation for uniform n-gon vertices.
 - Peg in hole (PiH) generation scripts (prisms as pegs with dedicated insertion boxes).
 - Created scripts for automatic generation of all PiH models.
@@ -19,5 +19,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Holes: set tolerance options to 5 mm or 10 mm.
-- Pegs: due to problems with collisions in simulation, changed cylinder into 12-gonal prism,
-- Pegs: from 3,4,5-gonals prims to 4,6,8-gonals prims (easier to grasp with finger gripper).
+- Pegs: due to problems with collisions in simulation, changed cylinder into 12-gonal prism.
+- Pegs: from 3-, 4- and 5-gonals prisms to 4-, 6- and 8-gonals prisms (easier to grasp with finger gripper).
