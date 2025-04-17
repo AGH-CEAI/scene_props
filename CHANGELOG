@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **2025-04-17** [[PR-7]](https://github.com/AGH-CEAI/scene_props/pull/7) - Added parametrized dummy THT components.
 - **2025-04-03** [[PR-6]](https://github.com/AGH-CEAI/scene_props/pull/6) - Added pegs with parametrized perpendicular handle.
 - **2025-04-03** [[PR-4]](https://github.com/AGH-CEAI/scene_props/pull/4) - Added `pre-commit` to the codebase.
 - Creation of insertion boxes for only one peg.
