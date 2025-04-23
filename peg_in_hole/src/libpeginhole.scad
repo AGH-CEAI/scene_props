@@ -66,26 +66,20 @@ module single_insertion_box(slot_size, height) {
 -  Args:
 - @slot_size: num - the side of the box
 - @array_size: vec[int, int] - array dimensions of the holes grid
-- @depth: num - the thickness of the surface for insertion
 - @height: num - the height of the whole box
-- @leg_width: num - the side of the supporting legs
 */
-module multiple_insertion_box(slot_size, array_size, depth, height, leg_width) {
+module multiple_insertion_box(slot_size, array_size, height) {
 	box_dims = slot_size * array_size;
 	difference() {
 		// Insertion surface
 		cube([ box_dims.x, box_dims.y, height ], center = true);
 
-		// Clearance (4 legs)
-		translate([ 0, 0, -depth ]) cube([ box_dims.x + EPS, box_dims.y - 2 * leg_width, height ], center = true);
-		translate([ 0, 0, -depth ]) cube([ box_dims.x - 2 * leg_width, box_dims.y + EPS, height ], center = true);
-
 		// Pegholes array
 		array_offset = -box_dims / 2 + [ slot_size, slot_size ] / 2;
 		for (cnt_y = [0:1:array_size.y - EPS]) {
+			dy = slot_size * cnt_y;
 			for (cnt_x = [0:1:array_size.x - EPS]) {
 				dx = slot_size * cnt_x;
-				dy = slot_size * cnt_y;
 				child_idx = ((cnt_y * array_size.x) + cnt_x) % $children;
 
 				translate([ array_offset.x + dx, array_offset.y + dy, 0 ]) children(child_idx);
