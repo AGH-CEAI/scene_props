@@ -84,7 +84,8 @@ module multiple_insertion_box(slot_size, array_size, height) {
 				dx = slot_size * cnt_x;
 				child_idx = ((cnt_y * array_size.x) + cnt_x) % $children;
 
-				translate([ array_offset.x + dx, array_offset.y + dy, 0 ]) children(child_idx);
+				translate([ array_offset.x + dx, array_offset.y + dy, 0 ])
+				children(child_idx);
 			}
 		}
 	}
