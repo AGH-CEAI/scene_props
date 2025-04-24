@@ -15,6 +15,7 @@
  */
 EPS = 0.001;
 
+function cylinder_vertices() = 0.5;
 function circle_coordinate(x, r, p) = [ r * cos(x + p), r *sin(x + p) ];
 function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r, phase)];
 
@@ -32,7 +33,7 @@ function angle_offset(vertices) = (360 / vertices) / 2;
 */
 module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = false)
 {
-	if (is_cylinder) {
+	if (is_cylinder || vertices == cylinder_vertices()) {
 		cylinder(h = height, r = diameter / 2, center = true);
 	} else if (vertices < 3) {
 		echo("ERROR: Can't construct polygon with less than 3 vertices!");
