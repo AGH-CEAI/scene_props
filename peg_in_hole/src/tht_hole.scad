@@ -25,7 +25,7 @@ block_height = 15;
 rotation = [ 0, 0, 0 ];  // in degs
 
 // Parameters for the THT's pins
-pin_vertices = 5;
+pin_vertices = 0.5; // for cylinder
 pin_diameter = 6;
 pin_is_cylinder = true;
 

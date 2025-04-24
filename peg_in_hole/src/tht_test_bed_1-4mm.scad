@@ -25,7 +25,7 @@ block_height = 15;
 rotation = [ 0, 0, 0 ];  // in degs
 
 // Parameters for the THT's pins
-pin_vertices = 5;
+pin_vertices = 0.5; // for cylinder case
 pin_diameter = 6;
 pin_is_cylinder = true;
 
@@ -62,7 +62,7 @@ module tht_block_1(tolerance)
 				inverted_positions = inverted_pins,
 				default_pin = default_pin) {
 		regular_prism(vertices = pin_vertices,
-					diameter = hole_diameter(pin_vertices, pin_diameter, tolerance),
+					diameter = hole_diameter(pin_diameter, pin_vertices, tolerance),
 					height = height * 2 + EPS,
 					angle_offset = angle_offset(pin_vertices),
 					is_cylinder = pin_is_cylinder);
@@ -84,7 +84,7 @@ module tht_block_2(tolerance)
 				inverted_positions = inverted_pins,
 				default_pin = default_pin) {
 		regular_prism(vertices = pin_vertices,
-					diameter = hole_diameter(pin_vertices, pin_diameter, tolerance),
+					diameter = hole_diameter(pin_diameter, pin_vertices, tolerance),
 					height = height * 2 + EPS,
 					angle_offset = angle_offset(pin_vertices),
 					is_cylinder = pin_is_cylinder);
@@ -106,7 +106,7 @@ module tht_block_3(tolerance)
 				inverted_positions = inverted_pins,
 				default_pin = default_pin) {
 		regular_prism(vertices = pin_vertices,
-					diameter = hole_diameter(pin_vertices, pin_diameter, tolerance),
+					diameter = hole_diameter(pin_diameter, pin_vertices, tolerance),
 					height = height * 2 + EPS,
 					angle_offset = angle_offset(pin_vertices),
 					is_cylinder = pin_is_cylinder);
