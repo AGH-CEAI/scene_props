@@ -19,7 +19,7 @@ function cylinder_vertices() = 0.5;
 function circle_coordinate(x, r, p) = [ r * cos(x + p), r *sin(x + p) ];
 function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r, phase)];
 
-function hole_diameter(peg_diameter, vertices = 0.5, tolerance = 0) = tolerance + peg_diameter * cos(180 / vertices);
+function hole_diameter(peg_diameter, vertices = 0.5, tolerance = 0) = peg_diameter + tolerance / cos(180 / vertices);
 function angle_offset(vertices) = (360 / vertices) / 2;
 
 
