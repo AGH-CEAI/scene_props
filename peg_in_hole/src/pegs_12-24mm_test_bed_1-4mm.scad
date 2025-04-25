@@ -31,7 +31,7 @@ rotation = [ 0, 0, 0 ]; // in degs
 array_x = len(vertices);
 array_y = len(tolerances);
 box_height = 10;
-slot_size = 2 * (prism_diameter + max(tolerances));
+slot_size = 1.25 * (prism_diameter + max(tolerances));
 
 module make_regular_prism(vertices, tolerance){
 	regular_prism(vertices = vertices,
