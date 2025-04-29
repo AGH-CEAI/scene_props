@@ -117,9 +117,7 @@ module tht_block_3(tolerance)
 array_x = 3;
 array_y = 3;
 
-row1_tolerance = 1.0; // mm
-row2_tolerance = 2.0; // mm
-row3_tolerance = 4.0; // mm
+tolerances = [0.5, 1, 1.5]; // mm
 
 difference(){
 	rotate(rotation)
@@ -127,14 +125,14 @@ difference(){
 						   array_size = [ array_x, array_y ],
 						   height = height)
 	{
-		tht_block_1(tolerance=row1_tolerance);
-		tht_block_2(tolerance=row1_tolerance);
-		tht_block_3(tolerance=row1_tolerance);
-		tht_block_1(tolerance=row2_tolerance);
-		tht_block_2(tolerance=row2_tolerance);
-		tht_block_3(tolerance=row2_tolerance);
-		tht_block_1(tolerance=row3_tolerance);
-		tht_block_2(tolerance=row3_tolerance);
-		tht_block_3(tolerance=row3_tolerance);
+		tht_block_1(tolerance=tolerances[0]);
+		tht_block_2(tolerance=tolerances[0]);
+		tht_block_3(tolerance=tolerances[0]);
+		tht_block_1(tolerance=tolerances[1]);
+		tht_block_2(tolerance=tolerances[1]);
+		tht_block_3(tolerance=tolerances[1]);
+		tht_block_1(tolerance=tolerances[2]);
+		tht_block_2(tolerance=tolerances[2]);
+		tht_block_3(tolerance=tolerances[2]);
 	};
 };

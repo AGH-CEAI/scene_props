@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_PATH=./src/pegs_12-24mm_test_bed_1-4mm.scad
+SCRIPT_PATH=./src/pegs_12-24mm_test_bed.scad
 OUTPUT_DIR=./meshes/pegs_test_bed
 mkdir -p $OUTPUT_DIR
 
@@ -12,7 +12,7 @@ generate_test_bed() {
     openscad \
             -D prism_diameter=$DIAMETER \
             $SCRIPT_PATH \
-            -o ${OUTPUT_DIR}/pegs_${DIAMETER}mm_test_bed_1-4mm.stl
+            -o ${OUTPUT_DIR}/pegs_${DIAMETER}mm_test_bed.stl
 }
 
 # Call the function for each diameter

@@ -22,7 +22,7 @@ CYLINDER_VERTICES = cylinder_vertices();
 
 // Pegs
 vertices = [CYLINDER_VERTICES, 3, 4, 6, 8, 12 ];
-tolerances = [1.0, 2.0, 4.0]; // mm
+tolerances = [0.5, 1.0, 1.5]; // mm
 prism_diameter = 12; // diameter 12mm, 24mm
 height = 10 + EPS;
 rotation = [ 0, 0, 0 ]; // in degs
