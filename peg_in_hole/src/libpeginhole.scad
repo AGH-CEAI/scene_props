@@ -15,10 +15,11 @@
  */
 EPS = 0.001;
 
+function cylinder_vertices() = 0.5;
 function circle_coordinate(x, r, p) = [ r * cos(x + p), r *sin(x + p) ];
 function regular_shape_vertices(n = 3, r = 1, phase = 0) = [for (t = [0:360 / n:360 - EPS]) circle_coordinate(t, r, phase)];
 
-function hole_diameter(vertices, peg_diameter, tolerance = 0) = tolerance + peg_diameter * cos(180 / vertices);
+function hole_diameter(peg_diameter, vertices = 0.5, tolerance = 0) = peg_diameter + tolerance / cos(180 / vertices);
 function angle_offset(vertices) = (360 / vertices) / 2;
 
 
@@ -32,7 +33,7 @@ function angle_offset(vertices) = (360 / vertices) / 2;
 */
 module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = false)
 {
-	if (is_cylinder) {
+	if (is_cylinder || vertices == cylinder_vertices()) {
 		cylinder(h = height, r = diameter / 2, center = true);
 	} else if (vertices < 3) {
 		echo("ERROR: Can't construct polygon with less than 3 vertices!");
@@ -47,6 +48,7 @@ module regular_prism(vertices, diameter, height, angle_offset, is_cylinder = fal
 		}
 	}
 }
+
 
 /* Makes a single peghole
 -  Args:
@@ -66,29 +68,24 @@ module single_insertion_box(slot_size, height) {
 -  Args:
 - @slot_size: num - the side of the box
 - @array_size: vec[int, int] - array dimensions of the holes grid
-- @depth: num - the thickness of the surface for insertion
 - @height: num - the height of the whole box
-- @leg_width: num - the side of the supporting legs
 */
-module multiple_insertion_box(slot_size, array_size, depth, height, leg_width) {
+module multiple_insertion_box(slot_size, array_size, height) {
 	box_dims = slot_size * array_size;
 	difference() {
 		// Insertion surface
 		cube([ box_dims.x, box_dims.y, height ], center = true);
 
-		// Clearance (4 legs)
-		translate([ 0, 0, -depth ]) cube([ box_dims.x + EPS, box_dims.y - 2 * leg_width, height ], center = true);
-		translate([ 0, 0, -depth ]) cube([ box_dims.x - 2 * leg_width, box_dims.y + EPS, height ], center = true);
-
 		// Pegholes array
 		array_offset = -box_dims / 2 + [ slot_size, slot_size ] / 2;
 		for (cnt_y = [0:1:array_size.y - EPS]) {
+			dy = slot_size * cnt_y;
 			for (cnt_x = [0:1:array_size.x - EPS]) {
 				dx = slot_size * cnt_x;
-				dy = slot_size * cnt_y;
 				child_idx = ((cnt_y * array_size.x) + cnt_x) % $children;
 
-				translate([ array_offset.x + dx, array_offset.y + dy, 0 ]) children(child_idx);
+				translate([ array_offset.x + dx, array_offset.y + dy, 0 ])
+				children(child_idx);
 			}
 		}
 	}

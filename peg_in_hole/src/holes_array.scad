@@ -34,11 +34,12 @@ slot_size = 1.5 * prism_diameter;
 leg_width = 2 * slot_size;
 
 rotate(rotation)
-multiple_insertion_box(slot_size = slot_size, array_size = [ array_x, array_y ], depth = box_height / 2,
-                       height = box_height, leg_width = 2 * slot_size)
+multiple_insertion_box(slot_size = slot_size,
+					array_size = [ array_x, array_y ],
+                    height = box_height)
 {
-	regular_prism(vertices = vertices[0], diameter = hole_diameter(vertices[0], prism_diameter, tolerance), height = height, angle_offset = angle_offset(vertices[0]));
-	regular_prism(vertices = vertices[1], diameter = hole_diameter(vertices[1], prism_diameter, tolerance), height = height, angle_offset = angle_offset(vertices[1]));
-	regular_prism(vertices = vertices[2], diameter = hole_diameter(vertices[2], prism_diameter, tolerance), height = height, angle_offset = angle_offset(vertices[2]));
-	regular_prism(vertices = vertices[3], diameter = hole_diameter(vertices[3], prism_diameter, tolerance), height = height, angle_offset = angle_offset(vertices[3]));
+	regular_prism(vertices = vertices[0], diameter = hole_diameter(prism_diameter, vertices[0], tolerance), height = height, angle_offset = angle_offset(vertices[0]));
+	regular_prism(vertices = vertices[1], diameter = hole_diameter(prism_diameter, vertices[1], tolerance), height = height, angle_offset = angle_offset(vertices[1]));
+	regular_prism(vertices = vertices[2], diameter = hole_diameter(prism_diameter, vertices[2], tolerance), height = height, angle_offset = angle_offset(vertices[2]));
+	regular_prism(vertices = vertices[3], diameter = hole_diameter(prism_diameter, vertices[3], tolerance), height = height, angle_offset = angle_offset(vertices[3]));
 };
